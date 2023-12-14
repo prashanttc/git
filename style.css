@@ -46,6 +46,9 @@ body {
   font-size: small;
   text-transform: uppercase;
 }
+#nav h4:hover {
+  cursor: pointer;
+}
 #nav img {
   height: 50px;
 }
