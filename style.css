@@ -200,17 +200,17 @@ border-radius: 20px;
   transition: all ease 0.5s;
 }
  #card1 {
-  background-image: url('Assests/card1.avif');
+  background-image: url('assets/card1.avif');
   background-size: cover;
   background-repeat: no-repeat;
  }
  #card2{
-  background-image: url('Assests/card2.webp');
+  background-image: url('assets/card2.webp');
   background-size: cover;
   background-repeat: no-repeat;
  }
  #card3 {
-  background-image: url('Assests/card3.avif');
+  background-image: url('assets/card3.avif');
   background-size: cover;
   background-repeat: no-repeat;
  }
