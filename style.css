@@ -2,76 +2,290 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: white;
-  font-family:'montserrat';
+  font-family: "montserrat";
+  color: #fff;
 }
-
 html,
 body {
   height: 100%;
   width: 100%;
 }
 
-.nav {
-  height: 80px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 40px;
+/* ------------------------------------cursor-------------------- */
+#cursor {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #95c11e;
   position: fixed;
-  padding: 0px 150px;
   z-index: 99;
 }
-.nav img {
-  height: 50px;
+#cursor-blur {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background-color: #96c11e41;
+  position: fixed;
+  filter: blur(50px);
+  z-index: 9;
 }
-.nav h4 {
+/* ------------------------------------navbar---------------------------- */
+#nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 45px;
+  position: fixed;
+  z-index: 98;
+  padding: 0px 150px;
+}
+#nav h4 {
   font-weight: 500;
+  font-size: small;
   text-transform: uppercase;
 }
+#nav img {
+  height: 50px;
+}
+
 video {
-  height: 100%;
   width: 100%;
+  height: 100%;
   z-index: -10;
   position: fixed;
   object-fit: cover;
 }
-.main{
- position: relative;
- background-color: rgba(0, 0, 0, 0.4);
+/* -----------------------------main body---------------------------------- */
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
 }
-.page1{
-height: 100vh;
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-text-align: center;
+#page1 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  z-index: 10;
 }
-.page1 h1::before {
-    content: "EAT .DRINK .PLAY";
-    position: absolute;
-    z-index: -1;
-    color: #000;
-    -webkit-text-stroke: 2px #95C11E;
-    top: -4px;
-    left: -4px ;
+
+#page1 h1::before {
+  content: "EAT .DRINK .PLAY";
+  position: absolute;
+  z-index: -1;
+  left: -4px;
+  top: -4px;
+  color: #000;
+  -webkit-text-stroke: 2px #95c11e;
+}
+#page1 h1 {
+  position: relative;
+  font-size: 6rem;
+  font-weight: 900;
+}
+#page1 h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 10px 0px 20px 0px;
+}
+#page1 p {
+  font-weight: 500;
+  font-size: 1rem;
+  width: 40%;
+}
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+/* ---------------------------------scroller------------------------------- */
+
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-1 {
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 
 }
-.page1 h1{
+#scroller h4 {
+    display: inline-block;
     font-size: 6rem;
     font-weight: 900;
-    position: relative;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 20px;
+    -webkit-text-stroke: 2px #d9f58e;
+    transition: all linear 0.5s;
+    text-transform: uppercase;
 }
-.page1 h2 {
-    margin: 10px 0px 20px 0px;
-   font-size: 1.5rem;
-   font-weight: 700;
+#scroller h4:hover {
+    color: #95c11e;
+    cursor: pointer;
 }
-.page1 p{
-    font-size: 1rem;
-    font-weight: 500;
-    width: 38%;
+/*---------------keyframe----------------------------------------- */
+@keyframes scroll {
+    from{
+        transform:  translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+/* ----------------------------------about us ---------------------------------------------------------- */
+#about-us {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  position: relative;
+  z-index: 10;
+}
+#about-us img{
+  width: 15%;
+  height: 50%;
+  object-fit: cover;
+border-radius: 20px;
+}
+#about-us-1 {
+  width: 50%;
+  text-align: center;
+}
+#about-us-1 h3 {
+  font-size: 2rem;
+  padding-bottom:  30px;
+  font-weight: 700;
+}
+#about-us-1 p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+/* -----------------------------cards------------------------------------------------ */
+#card-container {
+  height: 80vh;
+  display: flex;
+  justify-content:center;
+  gap: 50px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+.card {
+  width: 24%;
+  border-radius: 20px;
+  height: 80%;
+  overflow: hidden ;
+  transition: all ease 0.5s;
+}
+ #card1 {
+  background-image: url('Assests/card1.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+ #card2{
+  background-image: url('Assests/card2.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+ #card3 {
+  background-image: url('Assests/card3.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+ .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+padding: 30px;
+padding-top: 30%;
+opacity: 0;
+transition: all ease 0.6s;
+ }
+.card:hover .overlay{
+  cursor: pointer;
+   opacity: 1;
+ }
+ .card:hover {
+  transform: rotate3d(-1, -1,0, 15deg);
+ }
+ .overlay h4{
+  font-size: 1.4rem;
+  color: #000;
+  font-weight: 700;
+ margin-bottom: 20px;
+  white-space: nowrap;
+ }
+ .overlay  p{
+  font-size: 0.8rem;
+  color: #000;
+ }
+ /* ------------------------------------green box--------------------------------------------- */
+#green-div {
+  display: flex;
+  height: 30vh;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to left bottom , #119F3A,#ACE022);
+}
+#green-div img {
+  height: 30vh;
+  object-fit: cover;
+  width: 14%;
+}
+#green-div h4 {
+  width: 45%;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 900;
+  color: black;
+  line-height: 40px;
+}
+/* ---------------------------page 3--------------------------------------------------------- */
+#page3 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+#page3>p {
+   width: 65%;
+   text-align: center;
+   line-height: 45px;
+   font-size: 1.3rem;
+font-weight: 900;
+text-transform: uppercase;
+}
+#page3>img {
+    height: 60px;
+    position: absolute;
+}
+#colon1 {
+  left: 10%;
+top: 20%;
+}
+#colon2 {
+  right: 10%;
+  bottom: 20%;
 }
