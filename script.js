@@ -51,12 +51,35 @@ gsap.from(".card", {
     y: 50,
     scale : 0.8 ,
     opacity: 0,
-    duration: 2,
+    duration:10,
     scrollTrigger: {
         trigger: " .card",
         scroller: "body",
         start: "top 70%",
         end: "top 65%",
-        scrub : 1
+        scrub : true
+    }
+})
+
+gsap.from("#colon1", {
+    y : -70,
+    x: -70,
+    scrollTrigger: {
+        trigger: "#colon1",
+        scroll: "body",
+        start : "top 50%",
+        end :" top 45%",
+       scrub : 2
+    }
+})
+gsap.from("#colon2", {
+    y : 70,
+    x: 70,
+    scrollTrigger: {
+        trigger: "#colon1",
+        scroll: "body",
+        start : "top 50%",
+        end :" top 45%",
+        scrub : 2
     }
 })
