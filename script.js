@@ -62,8 +62,8 @@ gsap.from(".card", {
 })
 
 gsap.from("#colon1", {
-    y : -70,
-    x: -70,
+    y : -30,
+    x: -30,
     scrollTrigger: {
         trigger: "#colon1",
         scroll: "body",
@@ -73,8 +73,8 @@ gsap.from("#colon1", {
     }
 })
 gsap.from("#colon2", {
-    y : 70,
-    x: 70,
+    y : 30,
+    x: 30,
     scrollTrigger: {
         trigger: "#colon1",
         scroll: "body",
@@ -83,3 +83,21 @@ gsap.from("#colon2", {
         scrub : 2
     }
 })
+
+
+
+const mainmenu = document.querySelector('.mainmenu');
+const closemenu = document.querySelector('.closemenu');
+const openmenu = document.querySelector('.openmenu'); 
+
+openmenu.addEventListener('click', show);
+closemenu.addEventListener('click', close);
+
+function show() {
+    mainmenu.style.display = 'flex';
+    mainmenu.style.right= '0';
+}
+
+function close() {
+    mainmenu.style.right = '-100%';
+}
